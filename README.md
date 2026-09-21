@@ -45,7 +45,9 @@ sit on many signal paths despite modest connectivity.
 ### 3. Spiking Neuron Model
 
 Each neuron is modeled with the Leaky Integrate-and-Fire equation:
+```bash
 τ dV/dt = -(V - V_rest) + R·I(t)
+```
 
 
 When membrane potential crosses threshold, the neuron fires and resets. 
@@ -100,6 +102,7 @@ connectivity — not by any artificial ordering.
 
 ## Project Structure
 
+```bash
 fly-brain-signal-sim/
 ├── fetch_circuit.py # Pull real connectome data via neuPrint
 ├── build_graph.py # Build NetworkX graph from raw data
@@ -110,7 +113,7 @@ fly-brain-signal-sim/
 ├── gain_sensitivity.py # Parameter sensitivity analysis
 ├── visualize_simulation.py # Raster plot + propagation animation
 └── README.md
-
+```
 
 ## Installation
 
