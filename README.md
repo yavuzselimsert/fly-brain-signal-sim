@@ -129,6 +129,12 @@ NEUPRINT_TOKEN=your_token_here
 
 ## Usage
 
+> **Note:** Steps requiring a neuPrint token (`fetch_circuit.py`) are 
+> optional if you just want to explore the results — the fetched data 
+> (`neurons.csv`, `connections.csv`, `circuit_graph.gml`) is already 
+> included in this repository. You can start directly from 
+> `analyze_graph.py` onward without any API access.
+
 ```bash
 python fetch_circuit.py         # Fetch real data (requires token)
 python build_graph.py           # Build the connectivity graph

@@ -29,6 +29,10 @@ jobs:
           python -m py_compile build_graph.py
           python -m py_compile analyze_graph.py
           python -m py_compile network_simulation.py
+          python -m py_compile fetch_circuit.py
+          python -m py_compile visualize_graph.py
+          python -m py_compile visualize_simulation.py
+          python -m py_compile gain_sensitivity.py
 
       - name: Run tests
         run: |

@@ -13,11 +13,18 @@ R = 10.0
 TIME_STEP = 0.1
 
 # Network-specific parameters
-SYNAPTIC_GAIN = 0.04    # nA of current per unit of synaptic weight
-SYNAPTIC_TAU = 5.0    # ms, how long synaptic current persists after a spike
-STIMULUS_CURRENT = 6.0   # nA, injected into the stimulus neuron
-STIMULUS_DURATION = 30.0  # ms
+# SYNAPTIC_GAIN = 0.04 was chosen based on a systematic sensitivity
+# sweep (see gain_sensitivity.py): below ~0.05 the circuit shows
+# sparse, biologically plausible propagation; above ~0.06 activity
+# explodes into network-wide runaway excitation. 0.04 sits safely
+# in the healthy regime.
+SYNAPTIC_GAIN = 0.04
 
+SYNAPTIC_TAU = 5.0        # ms, synaptic current decay time constant
+STIMULUS_CURRENT = 6.0    # nA, injected into the stimulus neuron
+STIMULUS_DURATION = 30.0  # ms, long enough for the stimulus neuron
+                           # to fire multiple times (>1 inter-spike
+                           # interval at its natural ~80 Hz rate)
 
 def load_graph():
     return nx.read_gml("circuit_graph.gml", destringizer=int)
